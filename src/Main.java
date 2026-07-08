@@ -19,8 +19,15 @@ public class Main {
     for(int i=0; i < numeros.length; i++){
         soma = soma + numeros[i];
     }
-    media.setMedia(soma/4);
+    media.setMedia(soma/numeros.length);
     System.out.println(media.getMedia());
+    if(media.getMedia() >= 7){
+        System.out.println("Parabéns, você passou!");
+    }else if (media.getMedia() < 5 ){
+        System.out.println("Você está reprovado");
+    }else{
+        System.out.println("Você está em recuperação");
+    }
 
     }
 }

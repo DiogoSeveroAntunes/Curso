@@ -1,7 +1,7 @@
 
 
 
-public class Media {
+public class  Media {
     private Double[] notas;
     private Double media;
 
