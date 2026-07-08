@@ -2,16 +2,25 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-    Pessoa p = new Pessoa();
-    // metodo para pegar a informação digitada no teclado e salva-la para uso futuro//
+    Media media = new Media();
     Scanner s = new Scanner(System.in);
-    System.out.println("Digite o Seu nome");
-    //pegando a informação digitada pelo usuário
-    String nomeDigitado = s.nextLine();
-    //colocando a informação e a repassando
-    p.setNome(nomeDigitado);
-    System.out.println(p.getNome());
-    //código para fechar o scanner
-    s.close();
+
+    System.out.println("digite os 4 números das suas notas para o cálculo da média, separando-os por (,) ");
+    String numeros = s.nextLine();
+    String[] valorString = numeros.split(",");
+    Double[] numeros1 = new Double[valorString.length];
+    for( int i=0; i < valorString.length; i++){
+        numeros1[i] = Double.parseDouble(valorString[i]);
+
+    }
+
+    media.setNotas(numeros1);
+    Double soma = 0.0;
+    for(int i=0; i < numeros1.length; i++){
+        soma = soma + numeros1[i];
+    }
+    Double media1 = soma/4;
+    System.out.println(media1);
+
     }
 }
