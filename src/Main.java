@@ -6,21 +6,21 @@ public class Main {
     Scanner s = new Scanner(System.in);
 
     System.out.println("digite os 4 números das suas notas para o cálculo da média, separando-os por (,) ");
-    String numeros = s.nextLine();
-    String[] valorString = numeros.split(",");
-    Double[] numeros1 = new Double[valorString.length];
+    String resposta = s.nextLine();
+    String[] valorString = resposta.split(",");
+    Double[] numeros = new Double[valorString.length];
     for( int i=0; i < valorString.length; i++){
-        numeros1[i] = Double.parseDouble(valorString[i]);
+        numeros[i] = Double.parseDouble(valorString[i]);
 
     }
 
-    media.setNotas(numeros1);
+    media.setNotas(numeros);
     Double soma = 0.0;
-    for(int i=0; i < numeros1.length; i++){
-        soma = soma + numeros1[i];
+    for(int i=0; i < numeros.length; i++){
+        soma = soma + numeros[i];
     }
-    Double media1 = soma/4;
-    System.out.println(media1);
+    media.setMedia(soma/4);
+    System.out.println(media.getMedia());
 
     }
 }
